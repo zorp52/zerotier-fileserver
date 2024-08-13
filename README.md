@@ -8,7 +8,7 @@ Only one person needs to set up an account to set up the network, then anyone on
 > This is VERY basic&ugly, but provides all the functionality I've needed.
 
 # SETUP
-All you need is node, your [ZeroTier IP](https://imgur.com/a/XxOwrm3).
+All you need is node, your [ZeroTier IP](https://imgur.com/a/4I7SAMS).
 After editing the ZEROTIER_IP in server.js and setting it to your server ip you just:
 ```
 npm init
