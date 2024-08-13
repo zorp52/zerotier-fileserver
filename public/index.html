@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>File Manager</title>
+</head>
+<body>
+    <h1>Temp file stuff</h1>
+
+    <h2>Upload a File</h2>
+    <button id="upload-button">Click to Upload a File</button>
+    <input type="file" id="file-input" name="file" style="display: none;">
+    
+    <h2>Available Files</h2>
+    <ul id="file-list">
+        <!-- files go here -->
+    </ul>
+
+    <script>
+        async function fetchFiles() {
+            try {
+                const response = await fetch('/list-files');
+                if (!response.ok) throw new Error('Failed to fetch files');
+                const files = await response.json();
+
+                const fileList = document.getElementById('file-list');
+                fileList.innerHTML = '';
+
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = `/download/${file}`;
+                    downloadLink.textContent = file;
+                    downloadLink.download = file;
+
+                    listItem.appendChild(downloadLink);
+                    fileList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching files:', error);
+                document.getElementById('file-list').innerHTML = '<li>Failed to load files.</li>';
+            }
+        }
+
+        async function uploadFile(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error('Upload failed');
+
+                const result = await response.text();
+                console.log(result);
+
+                // Try to refresh list after upload, sometimes works, sometimes doesn't, !TODO I don't know why  
+                fetchFiles();
+            } catch (error) {
+                console.error('Error uploading file:', error);
+            }
+        }
+
+        document.getElementById('upload-button').addEventListener('click', function() {
+            document.getElementById('file-input').click(); 
+        });
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                uploadFile(file);
+            }
+        });
+
+        fetchFiles();
+        setInterval(fetchFiles, 10000);
+
+    </script>
+</body>
+</html>
