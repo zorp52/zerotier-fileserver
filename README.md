@@ -9,6 +9,14 @@ This file server utilizes [ZeroTier](https://www.zerotier.com), allowing one per
 - **Zero Configuration**: Minimal setup required, with only one account needed to create the network.
 - **Faster Transfers**: Experience faster file transfers compared to traditional cloud services.
 
+## MISSING
+- **Interacting with multiple files**: Remove/Install multiple files
+
+## Preview
+Here’s what the file server looks like in action:
+
+![ZeroTier FileServer](https://imgur.com/a/qF8uWNZ)
+
 ## Disclaimer
 > This is a very basic and unpolished implementation, but it provides all the essential functionality I have needed.
 
@@ -16,9 +24,15 @@ This file server utilizes [ZeroTier](https://www.zerotier.com), allowing one per
 To set up the ZeroTier FileServer, follow these steps:
 
 1. Ensure you have [Node.js](https://nodejs.org/) installed on your system.
-2. Obtain your [ZeroTier IP](https://imgur.com/a/4I7SAMS).
-3. Edit the `server.js` file to set the `ZEROTIER_IP` to your server's IP.
-4. Initialize the project and start the server:
+2. Install [Express](https://expressjs.com/):
+    ```bash
+    npm install express
+    ```
+3. Obtain your ZeroTier IP:
+
+![ZeroTier IP](https://i.imgur.com/yourImageID.jpg)
+4. Edit the `server.js` file to set the `ZEROTIER_IP` to your server's IP.
+5. Initialize the project and start the server:
     ```bash
     npm init -y
     node server.js
@@ -26,6 +40,3 @@ To set up the ZeroTier FileServer, follow these steps:
 
 ## Usage
 Once the server is running, connected users can access the file-sharing functionality as intended.
-
-For more information or to contribute, visit the [GitHub repository](https://github.com/Doommafia/zerotier-fileserver).
-
