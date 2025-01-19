@@ -1,41 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 
 :root {
-    background-color: #3b3b3b;
     font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 15px;
     text-align: center;
-    color: white;
 }
 
-h1{
-    font-size: 22px;
-}
-
-a {
-    text-decoration: none;
-    color: skyblue; 
-
-ul {
-    list-style-type: none;
-    padding: 0;
+body {
+    text-align: center;
     margin: 0;
+    padding: 0;
+}
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+.upload-btn {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.multi-select-btn {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.manage-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.remove-btn {
+    cursor: pointer;
+    color: red;
 }
 
-li {
-    margin: 10px 0;
+tr:nth-child(even) {
+    background-color: #f7f7f7; /* Light gray */
 }
 
-li a {
-    display: block;
+tr:nth-child(odd) {
+    background-color: #ffffff; /* White */
 }
 
-button{
-    width: 10%;
-    height: 20%;
-    font-family: inherit;
-    font-size: 13px;
-    border-radius: 5%;
-    color: white;
-    background-color: skyblue;
+tr.selected {
+    background-color: #FFFEb6;
+}
+
+td input[type="checkbox"] {
+    margin: 0 auto;
+}
+
+tr:hover {
+    background-color: #e2e2e2;
 }
