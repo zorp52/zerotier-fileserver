@@ -31,7 +31,7 @@ To set up the ZeroTier FileServer, follow these steps:
 3. Obtain your ZeroTier IP:
 
 ![ZeroTier IP](https://i.imgur.com/LCgCESK.png)
-4. Edit the `server.js` file to set the `ZEROTIER_IP` to your server's IP.
+4. Edit the `server.js` file to set the `ZEROTIER_IP` to your server's IP.<br>
 5. Initialize the project and start the server:
     ```bash
     npm init -y
