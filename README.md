@@ -15,7 +15,7 @@ This file server utilizes [ZeroTier](https://www.zerotier.com), allowing one per
 ## Preview
 Here’s what the file server looks like in action:
 
-![ZeroTier FileServer](https://imgur.com/a/qF8uWNZ)
+![ZeroTier FileServer](https://i.imgur.com/PCuZz93_d.webp?maxwidth=760&fidelity=grand)
 
 ## Disclaimer
 > This is a very basic and unpolished implementation, but it provides all the essential functionality I have needed.
@@ -30,7 +30,7 @@ To set up the ZeroTier FileServer, follow these steps:
     ```
 3. Obtain your ZeroTier IP:
 
-![ZeroTier IP](https://i.imgur.com/yourImageID.jpg)
+![ZeroTier IP](https://i.imgur.com/LCgCESK.png)
 4. Edit the `server.js` file to set the `ZEROTIER_IP` to your server's IP.
 5. Initialize the project and start the server:
     ```bash
